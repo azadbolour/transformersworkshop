@@ -1,0 +1,7 @@
+.stack-work
+hscope.out
+codex.tags
+tags
+.DS_Store
+.idea/
+*.iml

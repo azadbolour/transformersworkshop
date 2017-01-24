@@ -1,0 +1,35 @@
+name:                monadblender
+version:             0.1.0.0
+synopsis:            The monad blender abstraction to heterogeneous monadic composition.
+description:         Please see ../../README.md
+homepage:            https://github.com/azadbolour/transformersworkshop.git
+license:             BSD3
+license-file:        LICENSE
+author:              Azad Bolour
+maintainer:          azadbolour@bolour.com
+copyright:           2017 Bolour Compuring
+build-type:          Simple
+extra-source-files:  ../../README.md
+cabal-version:       >=1.10
+
+executable monad-blender-sample-exe
+  hs-source-dirs:      app
+  main-is:             MonadBlenderSample.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , transformers
+                     , mtl
+                     , monadblender
+  default-language:    Haskell2010
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     MonadBlender
+  build-depends:       base
+                     , transformers
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/azadbolour/transformersworkshop.git
+

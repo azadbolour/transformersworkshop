@@ -1,0 +1,38 @@
+name:                exercises
+version:             0.1.0.0
+synopsis:            Exercise for the monad transformer workshop.
+description:         Please see ../../README.md
+homepage:            https://github.com/azadbolour/transformersworkshop.git
+license:             BSD3
+license-file:        LICENSE
+author:              Azad Bolour
+maintainer:          azadbolour@bolour.com
+copyright:           2017 Bolour Compuring
+build-type:          Simple
+extra-source-files:  ../../README.md
+cabal-version:       >=1.10
+
+executable calc-discount-exercise-exe
+  hs-source-dirs:      app
+  main-is:             CalcDiscountExercise.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , transformers
+                     , mtl
+  default-language:    Haskell2010
+
+executable basic-evaluator-exe
+  hs-source-dirs:      app
+  main-is:             BasicEvaluator.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , transformers
+                     , mtl
+                     , containers
+  default-language:    Haskell2010
+  other-modules:     EvaluatorTypes
+
+source-repository head
+  type:     git
+  location: https://github.com/azadbolour/transformersworkshop.git
+
