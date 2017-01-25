@@ -12,7 +12,7 @@ build-type:          Simple
 extra-source-files:  ../../README.md
 cabal-version:       >=1.10
 
-executable monad-blender-sample-exe
+executable monad-blender-sample
   hs-source-dirs:      app
   main-is:             MonadBlenderSample.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
@@ -20,6 +20,13 @@ executable monad-blender-sample-exe
                      , transformers
                      , mtl
                      , monadblender
+  default-language:    Haskell2010
+
+executable reader-blender
+  hs-source-dirs:      app
+  main-is:             ReaderBlender.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
   default-language:    Haskell2010
 
 library

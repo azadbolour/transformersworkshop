@@ -6,11 +6,10 @@ Exercises and supporting materials for Haskell monad transformers workshop.
 
 Make sure stack is installed in your path.
 
+```bash
 cd workshop
-
 stack build
-
-See the .cabal files in the individual packages for featured executables.
+```
 
 # Packages
 
@@ -18,12 +17,26 @@ See the .cabal files in the individual packages for featured executables.
 
 Sketetal code for some exercises.
 
+```bash
+cd workshop/exercises
+run.sh
+```
+
 ## samples
 
 Supportig sample code.
+
+```bash
+cd workshop/samples
+run.sh
+```
 
 ## monadblender
 
 The _monad blender_ abstraction - a possible alternative to the _MonadTrans_ abstraction.
 Used as a pedagogical tool in this workshop.
 
+```bash
+cd workshop/monadblender
+run.sh
+```
