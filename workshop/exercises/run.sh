@@ -8,5 +8,5 @@ stack build
 echo "running calc-discount"
 stack exec calc-discount
 
-echo "running basic-evaluator"
-stack exec basic-evaluator
+echo "running exercises-basic-evaluator"
+stack exec exercises-basic-evaluator

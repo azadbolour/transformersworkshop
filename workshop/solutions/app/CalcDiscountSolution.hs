@@ -46,7 +46,7 @@ validateProductName name =
     let validator = \n -> not (null n) && (isAlpha $ head n)
     in validate name validator $ "invalid product name: " ++ name
 
-validateCustomerName :: ProductName -> Either String ProductName
+validateCustomerName :: CustomerName -> Either String CustomerName
 validateCustomerName name =
     let validator = \n -> not (null n) && (isUpper $ head n)
     in validate name validator $ "invalid customer name: " ++ name
@@ -54,17 +54,24 @@ validateCustomerName name =
 validate :: value -> (value -> Bool) -> String -> Either String value
 validate value validator message = if validator value then Right value else Left message
 
--- | TODO. Implement as a TransformerStack do block.
 findBasePrice :: ProductName -> TransformerStack Float
-findBasePrice name = return 0.0
+findBasePrice name = do
+    validName <- lift $ validateProductName name
+    product <- embedMaybe $ find ((== validName) . productName) products
+    return $ productBasePrice product
 
--- | TODO. Implement as a TransformerStack do block.
 findCustomerDiscount :: CustomerName -> TransformerStack Float
-findCustomerDiscount name = return 0.0
+findCustomerDiscount name = do
+    validName <- lift $ validateCustomerName name
+    customer <- embedMaybe $ find ((== validName) . customerName) customers
+    return $ customerDiscount customer
 
--- | TODO. Implement as a TransformerStack do block.
 findPriceForCustomer :: CustomerName -> ProductName -> TransformerStack Float
-findPriceForCustomer customerName productName = return 0.0
+
+findPriceForCustomer customerName productName = do
+    basePrice <- findBasePrice productName
+    customerDiscount <- findCustomerDiscount customerName
+    return (basePrice * (1 - customerDiscount))
 
 main :: IO ()
 main = do
@@ -72,5 +79,4 @@ main = do
     print $ findPriceForCustomer "Whole Foods" "Non-Existent"
     print $ findPriceForCustomer "Non-Existent" "MacBook Pro"
     print $ findPriceForCustomer "Safeway" "$acBook Pro"
-    print ""
 

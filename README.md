@@ -22,6 +22,15 @@ cd workshop/exercises
 run.sh
 ```
 
+## solutions
+
+Solutions for selected exercises.
+
+```bash
+cd workshop/solutions
+run.sh
+```
+
 ## samples
 
 Supportig sample code.

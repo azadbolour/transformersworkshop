@@ -21,7 +21,7 @@ executable calc-discount
                      , mtl
   default-language:    Haskell2010
 
-executable basic-evaluator
+executable exercises-basic-evaluator
   hs-source-dirs:      app
   main-is:             BasicEvaluator.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
