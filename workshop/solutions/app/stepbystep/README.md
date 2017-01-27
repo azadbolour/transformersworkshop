@@ -14,6 +14,7 @@ The progression of the examples from the paper goes as follows:
   - IOEvaluator.hs
 
 First draft: Created based on the step-by-step paper by Azad Bolour and Eitan Chatav.
+
 Second draft: Streamlined and minimally documented by Azad.
 
 
